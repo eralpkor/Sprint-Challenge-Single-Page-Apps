@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import CharacterCard from "./CharacterCard";
 import { Grid } from "semantic-ui-react";
+import Circle from "./Circle";
 
 export default function CharacterList() {
   // TODO: Add useState to track data from useEffect
@@ -10,10 +11,13 @@ export default function CharacterList() {
   useEffect(() => {
     // TODO: Add AJAX/API Request here - must run in `useEffect`
     //  Important: verify the 2nd `useEffect` parameter: the dependencies array!
-    axios.get("https://rickandmortyapi.com/api/character/").then(res => {
-      console.log(res.data.results);
-      setCharacter(res.data.results);
-    });
+    axios
+      .get("https://rickandmortyapi.com/api/character/")
+      .then(res => {
+        console.log(res.data.results);
+        setCharacter(res.data.results);
+      })
+      .catch(err => console.log("Error happened in character API ", err));
   }, []);
 
   return (
@@ -24,7 +28,7 @@ export default function CharacterList() {
             return <CharacterCard key={person.id} person={person} />; // return Person component
           })
         ) : (
-          <p>Loading...</p>
+          <Circle />
         )}
       </Grid>
     </section>

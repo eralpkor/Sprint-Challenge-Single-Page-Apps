@@ -1,6 +1,5 @@
 import React from "react";
 import { Card, Icon, Grid } from "semantic-ui-react";
-import styled from 'styled-components';
 
 
 export default function LocationCard(props) {

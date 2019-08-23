@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import EpisodeCard from "./EpisodeCard";
 import { Grid } from "semantic-ui-react";
+import Circle from "./Circle";
 
 export default function EpisodeList() {
   const [episode, setEpisode] = useState([]);
@@ -24,7 +25,7 @@ export default function EpisodeList() {
             return <EpisodeCard key={episodes.id} episode={episodes} />; // return episode component
           })
         ) : (
-          <p>Loading...</p>
+          <Circle />
         )}
       </Grid>
     </section>

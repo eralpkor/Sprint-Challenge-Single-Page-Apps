@@ -2,13 +2,13 @@ import React from "react";
 import { Card, Icon, Grid } from "semantic-ui-react";
 
 export default function EpisodeCard(props) {
-  const { air_date, episode, characters } = props.episode;
+  const { name, air_date, episode, characters } = props.episode;
 
   return (
     <Grid.Column>
       <Card>
         <Card.Content>
-          {/* <Card.Header>{name}</Card.Header> */}
+          <Card.Header>{name}</Card.Header>
           <Card.Meta>
             <span className="date">{air_date}</span>
           </Card.Meta>
