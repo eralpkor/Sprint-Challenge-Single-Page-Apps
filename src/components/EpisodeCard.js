@@ -1,9 +1,8 @@
 import React from "react";
 import { Card, Icon, Grid } from "semantic-ui-react";
 
-
-export default function LocationCard(props) {
-  const { name, type, dimension, residents } = props.place;
+export default function EpisodeCard(props) {
+  const { name, air_date, episode, characters } = props.episode;
 
   return (
     <Grid.Column>
@@ -11,14 +10,14 @@ export default function LocationCard(props) {
         <Card.Content>
           <Card.Header>{name}</Card.Header>
           <Card.Meta>
-            <span className="date">{type}</span>
+            <span className="date">{air_date}</span>
           </Card.Meta>
-          <Card.Description>Location: {dimension}</Card.Description>
+          <Card.Description>Episode: {episode}</Card.Description>
         </Card.Content>
         <Card.Content extra>
-          <a>
+          <a href={characters}>
             <Icon name="user" />
-            {residents.length} Residents
+            Characters: {characters.length}
           </a>
         </Card.Content>
       </Card>
