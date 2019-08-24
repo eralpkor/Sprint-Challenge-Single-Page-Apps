@@ -10,7 +10,7 @@ import EpisodesList from "./EpisodeList";
 
 const panes = [
   {
-    menuItem: "Home Page",
+    menuItem: { key: "home", icon: "home", content: "Home Page" },
     render: () => (
       <Tab.Pane>
         <WelcomePage />
@@ -18,7 +18,7 @@ const panes = [
     )
   },
   {
-    menuItem: "Characters",
+    menuItem: { key: "user", icon: "users", content: "Characters" },
     render: () => (
       <Tab.Pane>
         <CharacterList />
@@ -26,7 +26,7 @@ const panes = [
     )
   },
   {
-    menuItem: "Locations",
+    menuItem: { key: "location", icon: "location arrow", content: "Locations" },
     render: () => (
       <Tab.Pane>
         <LocationsList />
@@ -34,7 +34,7 @@ const panes = [
     )
   },
   {
-    menuItem: "Episodes",
+    menuItem: { key: "camera", icon: "camera", content: "Episodes" },
     render: () => (
       <Tab.Pane>
         <EpisodesList />
