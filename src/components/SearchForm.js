@@ -2,6 +2,9 @@ import React, { useState } from "react";
 
 export default function SearchForm({ onSearch }) {
   // STRETCH TODO: Add stateful logic for query/form data
+  const [state, setState] = useState([]);
+
+  var name = "hello";
   return (
     <section className="search-form">
       <form onSubmit={() => onSearch(name)}>
